@@ -5,10 +5,12 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 header
 {
+    
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -20,23 +22,86 @@ header
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: rgba(0,0,0,0.9);
 }
 .img-wrapper img
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.7;
+    animation: zoom 30s;
 }
+
+@keyframes zoom
+{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
 .banner
 {
     position: absolute;
-    top: 10%;
-    left: 50%;
+    top: 20%;
+    left: 10%;
+}
+.banner h1
+{
+    color: dodgerblue;
+    font-size: 3rem;
+    font-family: "Supermercado One", serif;
+    font-weight: 250;
+    text-shadow: .2rem .3rem .4px black;
+    line-height: 3rem;
+    animation: moveBanner 1.5s forwards;
 }
 .banner p
 {
-    color: dodgerblue;
-    font-size: 1.2rem;
+    color: rgb(90, 90, 90);
+    font-size: 1rem;
+    font-family: "Bebas Neue", serif;
+    font-weight: 100;
+    line-height: 2rem;
+    text-shadow: .1rem .2rem .1rem black;
+    animation: moveBanner 2s forwards;
+    
 }
+.banner button
+{
+    color: dodgerblue;
+    font-family: "Supermercado One";
+    font-size: 18px;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    animation: moveBanner 2.5s forwards;
+}
+.banner button:hover
+{
+    color: rgb(255, 255, 255);
+    opacity: 0.9;
+}
+@keyframes moveBanner
+{
+    0%{
+        transform: translateY(5rem) rotateY(-20deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0) rotateY(0);
+        opacity: 1;
+    }
+}
+

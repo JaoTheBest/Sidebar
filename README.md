@@ -3,10 +3,11 @@ Portfolio de desenvolvedor
 
 ## Tarefas
 
-o controle das tarefas desse projeto sera realizado bo git hub
+O controle das tarefas desse projeto sera realizado no Git Hub
 
-## icons
-:package: nova funcionalidade
-:up: atualizaçao
-:beatle: correçao de bug
-:checkered_flag: release
+## Icons
+
+:new: Nova funcionalidade 
+:up: Atualizaçao
+:wrench: Correçao de bug
+:rocket: Release
