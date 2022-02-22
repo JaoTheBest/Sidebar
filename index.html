@@ -8,22 +8,162 @@
     <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
-    <title>Portfólio</title>
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>TB</title>
 </head>
 <body>
-
     <div class="container">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bx-code-alt'></i>
+                <span class="logo_name">TheBest</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-dashboard' ></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Dashboard</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icons-links">
+                            <a href="#">
+                                <i class='bx bxs-collection'></i>
+                                <span class="link_name">Categorias</span>
+                            </a>
+                            <i class='bx bxs-chevron-down arrow'></i>
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a  class= "link_name" href="#">Categorias</a></li>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Card Design</a></li>
+                        <li><a href="#">Formulario de Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icons-links">
+                            <a href="#">
+                                <i class='bx bxs-folder-plus' ></i>
+                                <span class="link_name">Posts</span>
+                            </a>
+                            <i class='bx bxs-chevron-down arrow'></i>
+
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a  class= "link_name" href="#">Posts</a></li>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Card Design</a></li>
+                        <li><a href="#">Formulario de Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-line-chart'></i>
+                        <span class="link_name">Análises</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Análises</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bar-chart-alt-2'></i>
+                        <span class="link_name">Gráfico</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Gráfico</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icons-links">
+                            <a href="#">
+                                <i class='bx bxs-plug' ></i>
+                                <span class="link_name">Plugins</span>
+                            </a>
+                            <i class='bx bxs-chevron-down arrow'></i>
+
+                    </div>
+                    <ul class="sub-menu">
+                        <li><a  class= "link_name" href="#">Plugins</a></li>
+                        <li><a href="#">UI Face</a></li>
+                        <li><a href="#">Pigmentos</a></li>
+                        <li><a href="#">Box Icons</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-compass' ></i>
+                        <span class="link_name">Explore</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Explore</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-history' ></i>
+                        <span class="link_name">Histórico</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Histórico</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-cog' ></i>
+                        <span class="link_name">Configuraçoes</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a  class= "link_name" href="#">Configuraçoes</a></li>
+                    </ul>
+                </li>
+                <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="Mylogo/logo1.jpg" alt="profile">
+                    </div>
+                        <div class="name-job">
+                            <div class="profile_name">Joao Victor</div>
+                            <div class="job">"TheBest"</div>
+                        </div>
+                        <i class='bx bxs-log-out' ></i>
+                    </div>
+                </li>
+            </ul>
         <header>
             <div class="img-wrapper">
-                <img src="imagens/bg.jpg" alt="">
             </div>
             <div class="banner">
-               <h1>Noticias Jogos Tecnologia Entretenimento</h1>
-               <p>JoaoTheBest</p>
-               <button>Saiba Mais</button>
             </div>    
         </header>
     </div>
-    
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu-alt-left'></i>
+            <span class="text">Drop Down Sidebar</span>
+        </div>
+    </section>
+    <script>
+
+        let arrow = document.querySelectorAll(".arrow");
+        for (let i = 0; i < arrow.length; i++) {
+          arrow[i].addEventListener("click", (e)=>{
+         let arrowParent = e.target.parentElement.parentElement;
+            console.log(arrowParent);
+         arrowParent.classList.toggle("showMenu")
+            });   
+        }
+
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu-alt-left");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+    </script>
 </body>
 </html>

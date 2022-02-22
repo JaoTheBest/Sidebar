@@ -5,26 +5,313 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Supermercado One", serif;
     
 }
 
-header
+.sidebar
 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+    z-index: 100;
+    transition: all 0.5s ease;
     
+}
+.sidebar.close
+{
+    width: 78px;
+}
+.sidebar .logo-details
+{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i
+{
+    font-size: 30px;
+    color: white;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.sidebar .logo-details .logo_name
+{
+    font-family: "Supermercado One";
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s ease;
+    transition-delay:  0.2s;
+}
+.sidebar.close .logo-details .logo_name
+{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar .nav-links
+{
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+.sidebar .nav-links
+{
+    overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar
+{
+    display: none;
+}
+.sidebar .nav-links li
+{
+    position: relative;
+    list-style: none;
+    transition: all 0.5s ease4
+}
+.sidebar .nav-links li:hover
+{
+    background: #0F2027;
+}
+.sidebar .nav-links li .icons-links
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.sidebar.close .nav-links li .icons-links
+{
+    display: block;
+}
+.sidebar .nav-links li i
+{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow
+{
+    transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow   
+{
+    display: none;
+}
+.sidebar .nav-links li a
+{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.sidebar .nav-links li a .link_name
+{
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+}
+.sidebar.close .nav-links li a .link_name
+{
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu
+{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #0F2027;
+    display: none;
+
+}
+.sidebar .nav-links li.showMenu .sub-menu
+{
+    display: block;
+}
+.sidebar .nav-links li .sub-menu a
+{
+    color: white;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+.sidebar.close .nav-links li .sub-menu a:hover
+{
+    opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu
+{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    transition: 0s;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+}
+.sidebar.close .nav-links li:hover .sub-menu
+{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name
+{
+    display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name
+{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+.sidebar .nav-links li .sub-menu.blank
+{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank
+{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sidebar .profile-details
+{
+    position: fixed;
+    bottom: 0;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0F2027;
+    padding: 2px 8px;
+    transition: all 0.5s ease;
+}
+.sidebar.close .profile-details
+{
+    background: none;
+}
+.sidebar.close .profile-details
+{
+    width: 78px;
+}
+.sidebar .profile-details .profile-content
+{
+    display: flex;
+    align-items: center;
+}
+.sidebar .profile-details img
+{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 14px 0 12px;
+    background: #0F2027;
+    transition: all 0.5s ease;
+
+}
+.sidebar.close .profile-details img
+{
+    padding: 5px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job
+{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job
+{
+    display: none;
+}
+.sidebar .profile-details .job
+{
+    font-size: 15px;
+}
+.home-section
+{
+    position: relative;
+    background: #E4E9F7;
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+}
+.sidebar.close  ~ .home-section
+{
+   left: 75px;
+   width: calc(100% - 75px);
+
+}
+.home-section .home-content
+{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.home-section .home-content .bx-menu-alt-left,
+.home-section .home-content .text
+{
+    color: #0F2027;
+    font-size: 30px;
+
+}
+.home-section .home-content .bx-menu-alt-left
+{
+    margin: 0 15px; 
+    cursor: pointer;
+}
+.home-section .home-content .text
+{
+    font-size: 25px;
+    font-weight: 500;
+}
+/*header
+{
     width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
-
-}
-.img-wrapper
+}    
+/*.img-wrapper
 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.9);
+    background-color: black;
 }
-.img-wrapper img
+/*.img-wrapper img
 {
     width: 100%;
     height: 100%;
@@ -42,66 +329,3 @@ header
         transform: scale(1);
     }
 }
-
-.banner
-{
-    position: absolute;
-    top: 20%;
-    left: 10%;
-}
-.banner h1
-{
-    color: dodgerblue;
-    font-size: 3rem;
-    font-family: "Supermercado One", serif;
-    font-weight: 250;
-    text-shadow: .2rem .3rem .4px black;
-    line-height: 3rem;
-    animation: moveBanner 1.5s forwards;
-}
-.banner p
-{
-    color: rgb(90, 90, 90);
-    font-size: 1rem;
-    font-family: "Bebas Neue", serif;
-    font-weight: 100;
-    line-height: 2rem;
-    text-shadow: .1rem .2rem .1rem black;
-    animation: moveBanner 2s forwards;
-    
-}
-.banner button
-{
-    color: dodgerblue;
-    font-family: "Supermercado One";
-    font-size: 18px;
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 20px;
-    padding-left: 20px;
-    border: none;
-    border-radius: 10px;
-    letter-spacing: 0.1rem;
-    cursor: pointer;
-    animation: moveBanner 2.5s forwards;
-}
-.banner button:hover
-{
-    color: rgb(255, 255, 255);
-    opacity: 0.9;
-}
-@keyframes moveBanner
-{
-    0%{
-        transform: translateY(5rem) rotateY(-20deg);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0) rotateY(0);
-        opacity: 1;
-    }
-}
-
