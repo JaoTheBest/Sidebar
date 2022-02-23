@@ -1,6 +1,6 @@
-## portfolio
+## Primeiro Projeto 
 
-Portfolio de desenvolvedor
+Desenvolvimento de uma sidebar responsiva
 
 ## Tarefas
 
